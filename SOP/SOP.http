@@ -1,0 +1,6 @@
+@SOP_HostAddress = http://localhost:5177
+
+GET {{SOP_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
