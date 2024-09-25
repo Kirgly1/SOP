@@ -433,11 +433,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kirgly\\Desktop\\СОП\\SOP\\SOP.csproj",
+      "projectUniqueName": "C:\\Users\\Kirgly\\Source\\Repos\\SOP\\SOP\\SOP.csproj",
       "projectName": "SOP",
-      "projectPath": "C:\\Users\\Kirgly\\Desktop\\СОП\\SOP\\SOP.csproj",
+      "projectPath": "C:\\Users\\Kirgly\\Source\\Repos\\SOP\\SOP\\SOP.csproj",
       "packagesPath": "C:\\Users\\Kirgly\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kirgly\\Desktop\\СОП\\SOP\\obj\\",
+      "outputPath": "C:\\Users\\Kirgly\\Source\\Repos\\SOP\\SOP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Kirgly\\AppData\\Roaming\\NuGet\\NuGet.Config",

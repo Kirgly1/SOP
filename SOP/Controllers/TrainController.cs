@@ -39,10 +39,9 @@ namespace SOP.Controllers
                 Links = new List<object>
                 {
                     new { rel = "self", href = Url.Action("GetWagon", new { id = wagon.Id }) },
-                    new { rel = "load", href = Url.Action("LoadWagon", new { id = wagon.Id }) },
-                    new { rel = "update", href = Url.Action("UpdateWagon", new[] { wagon.Id }) },
-                    new { rel = "delete", href = Url.Action("DeleteWagon", new[] { wagon.Id }) },
-                    new { rel = "allWagons", href = Url.Action("GetWagons")}
+                    new { rel = "load", href = Url.Action("LoadWagon", new { id = wagon.Loaded }) },
+                    new { rel = "update", href = Url.Action("UpdateWagon", new { id = wagon.IsLoaded }) },                
+                    new { rel = "allWagons", href = Url.Action("GetWagons", new { id = wagon.Capacity})}
                 }
             };
 
@@ -62,7 +61,9 @@ namespace SOP.Controllers
                 Links = new List<object>
                 {
                     new { rel = "self", href = Url.Action("GetWagon", new {id = w.Id}) },
-                    new { rel = "load", href = Url.Action("LoadWagon", new {id =w.Id}) }
+                    new { rel = "load", href = Url.Action("LoadWagon", new {id =w.Loaded}) },
+                    new { rel = "update", href = Url.Action("UpdateWagon", new {id = w.IsLoaded})},
+                    new { rel = "allWagons", href = Url.Action("AllWagons", new {id = w.Capacity})}
                 }
             });
 

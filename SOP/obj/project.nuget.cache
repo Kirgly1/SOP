@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bQiXXy429w4=",
+  "dgSpecHash": "W9cKBM8fItY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kirgly\\Desktop\\СОП\\SOP\\SOP.csproj",
+  "projectFilePath": "C:\\Users\\Kirgly\\Source\\Repos\\SOP\\SOP\\SOP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kirgly\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Kirgly\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
