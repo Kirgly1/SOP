@@ -1,57 +1,98 @@
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using Microsoft.Extensions.Options;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace SOP.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
-
-    public class Wagon
+    public class MongoDBSettings
     {
-        public int Id { get; set; }
-        public string Cargo { get; set; }
-        public int Capacity { get; set; }
-        public int Loaded { get; set; }
-        public bool IsLoaded { get; set; }
+        public string ConnectionString { get; set; }
+        public string WagonStation { get; set; }
     }
 
-    public class LoadingStationController : ControllerBase
+    public class WagonResource
     {
-        private static List<Wagon> _wagons = new List<Wagon>()
+        [BsonId]
+        public ObjectId Id { get; set; }
+
+        [BsonElement("Cargo")]
+        public string Cargo { get; set; }
+
+        [BsonElement("Capacity")]
+        public int Capacity { get; set; }
+
+        [BsonElement("Loaded")]
+        public int Loaded { get; set; }
+
+        [BsonElement("IsLoaded")]
+        public bool IsLoaded { get; set; }
+
+        public Links Links { get; set; }
+    }
+
+
+    public class Links
+    {
+        public string Self { get; set; }
+        public string Update { get; set; }
+        public string Delete { get; set; }
+    }
+
+    [ApiController]
+    [Route("[controller]")]
+    public class TrainController : ControllerBase
+    {
+        private readonly IMongoCollection<WagonResource> _wagons;
+
+        public TrainController(IMongoClient client, IOptions<MongoDBSettings> mongoSettings)
         {
-            new Wagon() { Id =1, Cargo = "Coal", Capacity = 73, Loaded = 0, IsLoaded = false },
-            new Wagon() { Id =2, Cargo = "Gravel", Capacity = 77, Loaded=0, IsLoaded = false },
-        };
+            var database = client.GetDatabase(mongoSettings.Value.WagonStation);
+            _wagons = database.GetCollection<WagonResource>("wagons");
+        }
 
         [HttpGet("{id}")]
-        public IActionResult GetWagon(int id)
+        public async Task<IActionResult> GetWagon(string id)
         {
-            var wagon = _wagons.FirstOrDefault(w => w.Id == id);
-            if (wagon == null)
-                return NotFound();
-
-            var wagonWithLinks = new
+            if (!ObjectId.TryParse(id, out var objectId))
             {
-                wagon.Id,
-                wagon.Cargo,
-                wagon.Capacity,
-                wagon.Loaded,
-                wagon.IsLoaded,
-                Links = new List<object>
+                return BadRequest("Неверный формат Id.");
+            }
+
+            var wagon = await _wagons.Find(w => w.Id == objectId).FirstOrDefaultAsync();
+            if (wagon == null)
+            {
+                return NotFound();
+            }
+
+            var wagonResource = new WagonResource
+            {
+                Id = wagon.Id,
+                Cargo = wagon.Cargo,
+                Capacity = wagon.Capacity,
+                Loaded = wagon.Loaded,
+                IsLoaded = wagon.IsLoaded,
+                Links = new Links
                 {
-                    new { rel = "self", href = Url.Action("GetWagon", new { id = wagon.Id }) },
-                    new { rel = "load", href = Url.Action("LoadWagon", new { id = wagon.Loaded }) },
-                    new { rel = "update", href = Url.Action("UpdateWagon", new { id = wagon.IsLoaded }) },                
-                    new { rel = "allWagons", href = Url.Action("GetWagons", new { id = wagon.Capacity})}
+                    Self = Url.Link("GetWagon", new { id = wagon.Id.ToString() }),
+                    Update = Url.Link("UpdateWagon", new { id = wagon.Id.ToString() }),
+                    Delete = Url.Link("DeleteWagon", new { id = wagon.Id.ToString() })
                 }
             };
 
-            return Ok(wagonWithLinks);
-
+            return Ok(wagonResource);
         }
+
+
         [HttpGet]
-        public IActionResult GetWagons()
+        public async Task<IActionResult> GetWagons()
         {
-            var wagonsWithLinks = _wagons.Select(w => new
+            var wagons = await _wagons.Find(w => true).ToListAsync();
+            var wagonsWithLinks = wagons.Select(w => new
             {
                 w.Id,
                 w.Cargo,
@@ -60,58 +101,94 @@ namespace SOP.Controllers
                 w.IsLoaded,
                 Links = new List<object>
                 {
-                    new { rel = "self", href = Url.Action("GetWagon", new {id = w.Id}) },
-                    new { rel = "load", href = Url.Action("LoadWagon", new {id =w.Loaded}) },
-                    new { rel = "update", href = Url.Action("UpdateWagon", new {id = w.IsLoaded})},
-                    new { rel = "allWagons", href = Url.Action("AllWagons", new {id = w.Capacity})}
+                    new { rel = "self", href = Url.Action("GetWagon", new { id = w.Id.ToString() }) },
+                    new { rel = "load", href = Url.Action("LoadWagon", new { id = w.Id.ToString() }) }
                 }
             });
 
             return Ok(wagonsWithLinks);
         }
 
-        [HttpPut("load/{id}")]
-        public IActionResult LoadWagon(int id, [FromBody] int loadAmount)
+        [HttpPut("{id}/load")]
+        public async Task<IActionResult> LoadWagon(string id, [FromBody] int loadAmount)
         {
-            var wagon = _wagons.FirstOrDefault(w => w.Id == id);
+            if (!ObjectId.TryParse(id, out ObjectId objectId))
+            {
+                return BadRequest("Invalid ID format.");
+            }
+
+            var wagon = await _wagons.Find(w => w.Id == objectId).FirstOrDefaultAsync();
             if (wagon == null)
+            {
                 return NotFound();
+            }
 
             if (wagon.Loaded + loadAmount > wagon.Capacity)
-                return BadRequest("Погрузка невозможна");
+            {
+                return BadRequest("Loading exceeds capacity.");
+            }
 
             wagon.Loaded += loadAmount;
-            if (wagon.Loaded > wagon.Capacity)
+            if (wagon.Loaded >= wagon.Capacity)
+            {
                 wagon.IsLoaded = true;
+            }
+
+            await _wagons.ReplaceOneAsync(w => w.Id == objectId, wagon);
 
             return NoContent();
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateWagon(int id, [FromBody] Wagon updateWagon)
+        public async Task<IActionResult> UpdateWagon(string id, [FromBody] WagonResource updateWagon)
         {
-            var wagon = _wagons.FirstOrDefault(w => w.Id == id);
-            if(wagon == null)
+            if (!ObjectId.TryParse(id, out ObjectId objectId))
+            {
+                return BadRequest("Invalid ID format.");
+            }
+
+            var wagon = await _wagons.Find(w => w.Id == objectId).FirstOrDefaultAsync();
+            if (wagon == null)
+            {
                 return NotFound();
+            }
 
             wagon.Cargo = updateWagon.Cargo;
             wagon.Capacity = updateWagon.Capacity;
-            wagon.Loaded = updateWagon.Capacity; 
+            wagon.Loaded = updateWagon.Loaded;
             wagon.IsLoaded = updateWagon.IsLoaded;
+
+            await _wagons.ReplaceOneAsync(w => w.Id == objectId, wagon);
 
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteWagon(int id)
+        public async Task<IActionResult> DeleteWagon(string id)
         {
-            var wagon = _wagons.FirstOrDefault(w =>w.Id == id);
-            if ( wagon == null)
-                return NotFound();
+            if (!ObjectId.TryParse(id, out ObjectId objectId))
+            {
+                return BadRequest("Invalid ID format.");
+            }
 
-            _wagons.Remove(wagon);
+            var wagon = await _wagons.Find(w => w.Id == objectId).FirstOrDefaultAsync();
+            if (wagon == null)
+            {
+                return NotFound();
+            }
+
+            await _wagons.DeleteOneAsync(w => w.Id == objectId);
+
             return NoContent();
         }
-    } 
+
+        [HttpPost]
+        public async Task<IActionResult> CreateWagon([FromBody] WagonResource newWagon)
+        {
+            newWagon.Id = ObjectId.GenerateNewId();
+
+            await _wagons.InsertOneAsync(newWagon);
+            return CreatedAtAction(nameof(GetWagon), new { id = newWagon.Id.ToString() }, newWagon);
+        }
+    }
 }
-   

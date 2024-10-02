@@ -63,3 +63,16 @@ C:\Users\Kirgly\Source\Repos\SOP\SOP\obj\Debug\net8.0\refint\SOP.dll
 C:\Users\Kirgly\Source\Repos\SOP\SOP\obj\Debug\net8.0\SOP.pdb
 C:\Users\Kirgly\Source\Repos\SOP\SOP\obj\Debug\net8.0\SOP.genruntimeconfig.cache
 C:\Users\Kirgly\Source\Repos\SOP\SOP\obj\Debug\net8.0\ref\SOP.dll
+C:\Users\Kirgly\Source\Repos\SOP\SOP\bin\Debug\net8.0\AWSSDK.Core.dll
+C:\Users\Kirgly\Source\Repos\SOP\SOP\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
+C:\Users\Kirgly\Source\Repos\SOP\SOP\bin\Debug\net8.0\DnsClient.dll
+C:\Users\Kirgly\Source\Repos\SOP\SOP\bin\Debug\net8.0\MongoDB.Bson.dll
+C:\Users\Kirgly\Source\Repos\SOP\SOP\bin\Debug\net8.0\MongoDB.Driver.dll
+C:\Users\Kirgly\Source\Repos\SOP\SOP\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+C:\Users\Kirgly\Source\Repos\SOP\SOP\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
+C:\Users\Kirgly\Source\Repos\SOP\SOP\bin\Debug\net8.0\SharpCompress.dll
+C:\Users\Kirgly\Source\Repos\SOP\SOP\bin\Debug\net8.0\Snappier.dll
+C:\Users\Kirgly\Source\Repos\SOP\SOP\bin\Debug\net8.0\ZstdSharp.dll
+C:\Users\Kirgly\Source\Repos\SOP\SOP\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\Kirgly\Source\Repos\SOP\SOP\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\Kirgly\Source\Repos\SOP\SOP\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll

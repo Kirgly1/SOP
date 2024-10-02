@@ -1,68 +1,94 @@
 [
   {
-    "ContainingType": "SOP.Controllers.LoadingStationController",
+    "ContainingType": "SOP.Controllers.TrainController",
+    "Method": "GetWagons",
+    "RelativePath": "Train",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SOP.Controllers.TrainController",
+    "Method": "CreateWagon",
+    "RelativePath": "Train",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newWagon",
+        "Type": "SOP.Controllers.WagonResource",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SOP.Controllers.TrainController",
     "Method": "GetWagon",
-    "RelativePath": "{id}",
+    "RelativePath": "Train/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SOP.Controllers.LoadingStationController",
+    "ContainingType": "SOP.Controllers.TrainController",
     "Method": "UpdateWagon",
-    "RelativePath": "{id}",
+    "RelativePath": "Train/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": true
       },
       {
         "Name": "updateWagon",
-        "Type": "SOP.Controllers.Wagon",
+        "Type": "SOP.Controllers.WagonResource",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SOP.Controllers.LoadingStationController",
+    "ContainingType": "SOP.Controllers.TrainController",
     "Method": "DeleteWagon",
-    "RelativePath": "{id}",
+    "RelativePath": "Train/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SOP.Controllers.LoadingStationController",
+    "ContainingType": "SOP.Controllers.TrainController",
     "Method": "LoadWagon",
-    "RelativePath": "load/{id}",
+    "RelativePath": "Train/{id}/load",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": true
       },
       {
