@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using SOP.Controllers;
 using Microsoft.Extensions.Options;
+using SOP.Entity;
+using SOP.Mongo;
 
 namespace SOP.Services
 {

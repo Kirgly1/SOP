@@ -6,43 +6,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Bson.Serialization.Attributes;
+using SOP.Entity;
+using SOP.Mongo;
+using SOP.HyperMedia;
 
 namespace SOP.Controllers
 {
-    public class MongoDBSettings
-    {
-        public string ConnectionString { get; set; }
-        public string WagonStation { get; set; }
-    }
-
-    public class WagonResource
-    {
-        [BsonId]
-        public ObjectId Id { get; set; }
-
-        [BsonElement("Cargo")]
-        public string Cargo { get; set; }
-
-        [BsonElement("Capacity")]
-        public int Capacity { get; set; }
-
-        [BsonElement("Loaded")]
-        public int Loaded { get; set; }
-
-        [BsonElement("IsLoaded")]
-        public bool IsLoaded { get; set; }
-
-        public Links Links { get; set; }
-    }
-
-
-    public class Links
-    {
-        public string Self { get; set; }
-        public string Update { get; set; }
-        public string Delete { get; set; }
-    }
-
     [ApiController]
     [Route("[controller]")]
     public class TrainController : ControllerBase

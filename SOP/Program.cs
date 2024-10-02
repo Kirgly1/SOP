@@ -1,11 +1,18 @@
 using MongoDB.Driver;
 using SOP.Controllers;
+using SOP.GraphQL;
 using SOP.Services;
+using SOP.Mongo;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllers();
+builder.Services.AddGraphQLServer()
+    .AddQueryType<Query>();
+
+builder.Services.AddGraphQLServer()
+    .AddMutationType<Mutation>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
@@ -33,6 +40,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseRouting();
+app.MapGraphQL();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
