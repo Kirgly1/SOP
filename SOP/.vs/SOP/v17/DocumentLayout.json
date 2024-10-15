@@ -3,44 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|c:\\users\\kirgly\\source\\repos\\sop\\sop\\entity\\wagonresource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|solutionrelative:entity\\wagonresource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|c:\\users\\kirgly\\source\\repos\\sop\\sop\\graphql\\query.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|solutionrelative:graphql\\query.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|c:\\users\\kirgly\\source\\repos\\sop\\sop\\controllers\\traincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|solutionrelative:controllers\\traincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|c:\\users\\kirgly\\source\\repos\\sop\\sop\\hypermedia\\links.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|solutionrelative:hypermedia\\links.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|c:\\users\\kirgly\\source\\repos\\sop\\sop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|c:\\users\\kirgly\\source\\repos\\sop\\sop\\services\\wagonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|solutionrelative:services\\wagonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|c:\\users\\kirgly\\source\\repos\\sop\\sop\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|c:\\users\\kirgly\\source\\repos\\sop\\sop\\graphql\\mutation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|solutionrelative:graphql\\mutation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|c:\\users\\kirgly\\source\\repos\\sop\\sop\\graphql\\wagonschema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|solutionrelative:graphql\\wagonschema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|c:\\users\\kirgly\\source\\repos\\sop\\sop\\graphql\\query.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|solutionrelative:graphql\\query.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|c:\\users\\kirgly\\source\\repos\\sop\\sop\\services\\wagonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|solutionrelative:services\\wagonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|c:\\users\\kirgly\\source\\repos\\sop\\sop\\mongo\\mongodbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|solutionrelative:mongo\\mongodbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|c:\\users\\kirgly\\source\\repos\\sop\\sop\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|c:\\users\\kirgly\\source\\repos\\sop\\sop\\controllers\\traincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|solutionrelative:controllers\\traincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|c:\\users\\kirgly\\source\\repos\\sop\\sop\\entity\\wagonresource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|solutionrelative:entity\\wagonresource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|c:\\users\\kirgly\\source\\repos\\sop\\sop\\hypermedia\\links.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFDD591E-1EC0-4B59-A94A-2D443342001F}|SOP.csproj|solutionrelative:hypermedia\\links.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,131 +66,119 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "WagonResource.cs",
-              "DocumentMoniker": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Entity\\WagonResource.cs",
-              "RelativeDocumentMoniker": "Entity\\WagonResource.cs",
-              "ToolTip": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Entity\\WagonResource.cs*",
-              "RelativeToolTip": "Entity\\WagonResource.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T17:32:30.24Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Links.cs",
-              "DocumentMoniker": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\HyperMedia\\Links.cs",
-              "RelativeDocumentMoniker": "HyperMedia\\Links.cs",
-              "ToolTip": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\HyperMedia\\Links.cs",
-              "RelativeToolTip": "HyperMedia\\Links.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T17:31:28.608Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MongoDBSettings.cs",
-              "DocumentMoniker": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Mongo\\MongoDBSettings.cs",
-              "RelativeDocumentMoniker": "Mongo\\MongoDBSettings.cs",
-              "ToolTip": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Mongo\\MongoDBSettings.cs",
-              "RelativeToolTip": "Mongo\\MongoDBSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T17:29:38.258Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Mutation.cs",
-              "DocumentMoniker": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\GraphQL\\Mutation.cs",
-              "RelativeDocumentMoniker": "GraphQL\\Mutation.cs",
-              "ToolTip": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\GraphQL\\Mutation.cs",
-              "RelativeToolTip": "GraphQL\\Mutation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T17:14:48.957Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Query.cs",
               "DocumentMoniker": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\GraphQL\\Query.cs",
               "RelativeDocumentMoniker": "GraphQL\\Query.cs",
               "ToolTip": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\GraphQL\\Query.cs",
               "RelativeToolTip": "GraphQL\\Query.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T16:59:51.845Z",
+              "WhenOpened": "2024-10-15T19:00:59.352Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "WagonService.cs",
-              "DocumentMoniker": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Services\\WagonService.cs",
-              "RelativeDocumentMoniker": "Services\\WagonService.cs",
-              "ToolTip": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Services\\WagonService.cs",
-              "RelativeToolTip": "Services\\WagonService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAQAAAAAAAAAA==",
+              "Title": "MongoDBSettings.cs",
+              "DocumentMoniker": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Mongo\\MongoDBSettings.cs",
+              "RelativeDocumentMoniker": "Mongo\\MongoDBSettings.cs",
+              "ToolTip": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Mongo\\MongoDBSettings.cs",
+              "RelativeToolTip": "Mongo\\MongoDBSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T13:59:43.37Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-02T13:56:45.042Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-17T20:34:54.095Z",
+              "WhenOpened": "2024-10-15T18:29:41.021Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "TrainController.cs",
-              "DocumentMoniker": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Controllers\\TrainController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TrainController.cs",
-              "ToolTip": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Controllers\\TrainController.cs",
-              "RelativeToolTip": "Controllers\\TrainController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAUAAAAAAAAAA==",
+              "Title": "WagonSchema.cs",
+              "DocumentMoniker": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\GraphQL\\WagonSchema.cs",
+              "RelativeDocumentMoniker": "GraphQL\\WagonSchema.cs",
+              "ToolTip": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\GraphQL\\WagonSchema.cs",
+              "RelativeToolTip": "GraphQL\\WagonSchema.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowCMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T19:14:45.171Z",
+              "WhenOpened": "2024-10-15T18:12:00.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Mutation.cs",
+              "DocumentMoniker": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\GraphQL\\Mutation.cs",
+              "RelativeDocumentMoniker": "GraphQL\\Mutation.cs",
+              "ToolTip": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\GraphQL\\Mutation.cs",
+              "RelativeToolTip": "GraphQL\\Mutation.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAwEYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T08:01:25.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WagonResource.cs",
+              "DocumentMoniker": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Entity\\WagonResource.cs",
+              "RelativeDocumentMoniker": "Entity\\WagonResource.cs",
+              "ToolTip": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Entity\\WagonResource.cs",
+              "RelativeToolTip": "Entity\\WagonResource.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T07:19:12.101Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "WagonService.cs",
+              "DocumentMoniker": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Services\\WagonService.cs",
+              "RelativeDocumentMoniker": "Services\\WagonService.cs",
+              "ToolTip": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Services\\WagonService.cs",
+              "RelativeToolTip": "Services\\WagonService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAkwB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T07:18:53.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-17T19:10:04.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TrainController.cs",
+              "DocumentMoniker": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Controllers\\TrainController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TrainController.cs",
+              "ToolTip": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\Controllers\\TrainController.cs",
+              "RelativeToolTip": "Controllers\\TrainController.cs",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAmwDgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T07:19:21.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Links.cs",
+              "DocumentMoniker": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\HyperMedia\\Links.cs",
+              "RelativeDocumentMoniker": "HyperMedia\\Links.cs",
+              "ToolTip": "C:\\Users\\Kirgly\\source\\repos\\SOP\\SOP\\HyperMedia\\Links.cs",
+              "RelativeToolTip": "HyperMedia\\Links.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T17:45:28.643Z",
               "EditorCaption": ""
             }
           ]

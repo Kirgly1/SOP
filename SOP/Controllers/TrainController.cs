@@ -24,7 +24,7 @@ namespace SOP.Controllers
             _wagons = database.GetCollection<WagonResource>("wagons");
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetWagon")]
         public async Task<IActionResult> GetWagon(string id)
         {
             if (!ObjectId.TryParse(id, out var objectId))
@@ -49,13 +49,13 @@ namespace SOP.Controllers
                 {
                     Self = Url.Link("GetWagon", new { id = wagon.Id.ToString() }),
                     Update = Url.Link("UpdateWagon", new { id = wagon.Id.ToString() }),
-                    Delete = Url.Link("DeleteWagon", new { id = wagon.Id.ToString() })
+                    Delete = Url.Link("DeleteWagon", new { id = wagon.Id.ToString() }),
+                    Load = Url.Link("LoadWagon", new { id = wagon.Id.ToString() })
                 }
             };
 
             return Ok(wagonResource);
         }
-
 
         [HttpGet]
         public async Task<IActionResult> GetWagons()
@@ -71,6 +71,8 @@ namespace SOP.Controllers
                 Links = new List<object>
                 {
                     new { rel = "self", href = Url.Action("GetWagon", new { id = w.Id.ToString() }) },
+                    new { rel = "update", href = Url.Action("UpdateWagon", new { id = w.Id.ToString() }) },
+                    new { rel = "delete", href = Url.Action("DeleteWagon", new { id = w.Id.ToString() }) },
                     new { rel = "load", href = Url.Action("LoadWagon", new { id = w.Id.ToString() }) }
                 }
             });
@@ -78,7 +80,7 @@ namespace SOP.Controllers
             return Ok(wagonsWithLinks);
         }
 
-        [HttpPut("{id}/load")]
+        [HttpPut("{id}/load", Name = "LoadWagon")]
         public async Task<IActionResult> LoadWagon(string id, [FromBody] int loadAmount)
         {
             if (!ObjectId.TryParse(id, out ObjectId objectId))
@@ -108,7 +110,7 @@ namespace SOP.Controllers
             return NoContent();
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{id}", Name = "UpdateWagon")]
         public async Task<IActionResult> UpdateWagon(string id, [FromBody] WagonResource updateWagon)
         {
             if (!ObjectId.TryParse(id, out ObjectId objectId))
@@ -132,7 +134,7 @@ namespace SOP.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}", Name = "DeleteWagon")]
         public async Task<IActionResult> DeleteWagon(string id)
         {
             if (!ObjectId.TryParse(id, out ObjectId objectId))
@@ -151,7 +153,7 @@ namespace SOP.Controllers
             return NoContent();
         }
 
-        [HttpPost]
+        [HttpPost(Name = "CreateWagon")]
         public async Task<IActionResult> CreateWagon([FromBody] WagonResource newWagon)
         {
             newWagon.Id = ObjectId.GenerateNewId();

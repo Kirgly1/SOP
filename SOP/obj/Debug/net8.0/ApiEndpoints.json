@@ -23,7 +23,8 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [],
+    "EndpointName": "CreateWagon"
   },
   {
     "ContainingType": "SOP.Controllers.TrainController",
@@ -39,7 +40,8 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [],
+    "EndpointName": "GetWagon"
   },
   {
     "ContainingType": "SOP.Controllers.TrainController",
@@ -60,7 +62,8 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [],
+    "EndpointName": "UpdateWagon"
   },
   {
     "ContainingType": "SOP.Controllers.TrainController",
@@ -76,7 +79,8 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [],
+    "EndpointName": "DeleteWagon"
   },
   {
     "ContainingType": "SOP.Controllers.TrainController",
@@ -97,6 +101,7 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [],
+    "EndpointName": "LoadWagon"
   }
 ]

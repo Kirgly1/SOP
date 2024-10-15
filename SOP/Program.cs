@@ -9,10 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddGraphQLServer()
-    .AddQueryType<Query>();
-
-builder.Services.AddGraphQLServer()
+    .AddQueryType<Query>()
     .AddMutationType<Mutation>();
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>

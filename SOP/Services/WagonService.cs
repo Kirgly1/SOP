@@ -20,9 +20,9 @@ namespace SOP.Services
             _wagons = database.GetCollection<WagonResource>("wagons");
         }
 
-        public async Task<WagonResource> GetWagonByIdAsync(string id)
+        public async Task<WagonResource> GetWagonByIdAsync(ObjectId id)
         {
-            return await _wagons.Find(w => w.Id == ObjectId.Parse(id)).FirstOrDefaultAsync();
+            return await _wagons.Find(w => w.Id == id).FirstOrDefaultAsync();
         }
 
         public async Task<List<WagonResource>> GetAllWagonsAsync()
@@ -40,17 +40,17 @@ namespace SOP.Services
             await _wagons.InsertOneAsync(newWagon);
         }
 
-        public async Task UpdateWagonAsync(string id, WagonResource updateWagon)
+        public async Task UpdateWagonAsync(ObjectId id, WagonResource updateWagon)
         {
-            await _wagons.ReplaceOneAsync(w => w.Id == ObjectId.Parse(id), updateWagon);
+            await _wagons.ReplaceOneAsync(w => w.Id == id, updateWagon);
         }
 
-        public async Task DeleteWagonAsync(string id)
+        public async Task DeleteWagonAsync(ObjectId id)
         {
-            await _wagons.DeleteOneAsync(w => w.Id == ObjectId.Parse(id));
+            await _wagons.DeleteOneAsync(w => w.Id == id);
         }
 
-        public async Task LoadWagonAsync(string id, int loadAmount)
+        public async Task LoadWagonAsync(ObjectId id, int loadAmount)
         {
             var wagon = await GetWagonByIdAsync(id);
             if (wagon == null)
