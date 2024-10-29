@@ -9,6 +9,7 @@ using MongoDB.Bson.Serialization.Attributes;
 using SOP.Entity;
 using SOP.Mongo;
 using SOP.HyperMedia;
+using SOP.RabbitMQ;
 
 namespace SOP.Controllers
 {
@@ -17,11 +18,13 @@ namespace SOP.Controllers
     public class TrainController : ControllerBase
     {
         private readonly IMongoCollection<WagonResource> _wagons;
-
-        public TrainController(IMongoClient client, IOptions<MongoDBSettings> mongoSettings)
+        private readonly RabbitMqService _rabbitMqService;
+        
+        public TrainController(IMongoClient client, IOptions<MongoDBSettings> mongoSettings, RabbitMqService rabbitMqService)
         {
             var database = client.GetDatabase(mongoSettings.Value.WagonStation);
             _wagons = database.GetCollection<WagonResource>("wagons");
+            _rabbitMqService = rabbitMqService;
         }
 
         [HttpGet("{id}", Name = "GetWagon")]
@@ -29,7 +32,7 @@ namespace SOP.Controllers
         {
             if (!ObjectId.TryParse(id, out var objectId))
             {
-                return BadRequest("Неверный формат Id.");
+                return BadRequest("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ Id.");
             }
 
             var wagon = await _wagons.Find(w => w.Id == objectId).FirstOrDefaultAsync();
@@ -159,6 +162,7 @@ namespace SOP.Controllers
             newWagon.Id = ObjectId.GenerateNewId();
 
             await _wagons.InsertOneAsync(newWagon);
+            _rabbitMqService.PublishMessage($"РЎРѕР·РґР°РЅ РЅРѕРІС‹Р№ РІР°РіРѕРЅ: {newWagon.Cargo}");
             return CreatedAtAction(nameof(GetWagon), new { id = newWagon.Id.ToString() }, newWagon);
         }
     }
