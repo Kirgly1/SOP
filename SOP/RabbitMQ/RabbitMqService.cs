@@ -11,7 +11,7 @@ namespace SOP.RabbitMQ
         {
             var connection = connectionFactory.CreateConnection();
             _channel = connection.CreateModel();
-            _channel.QueueDeclare(queue: "wagons", durable: true, exclusive: false, autoDelete: false, arguments: null);
+            _channel.QueueDeclare(queue: "wagons", durable: false, exclusive: false, autoDelete: false, arguments: null);
         }
 
         public IModel Channel => _channel;

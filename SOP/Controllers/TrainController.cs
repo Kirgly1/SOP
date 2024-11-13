@@ -5,7 +5,6 @@ using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MongoDB.Bson.Serialization.Attributes;
 using SOP.Entity;
 using SOP.Mongo;
 using SOP.HyperMedia;
@@ -14,7 +13,7 @@ using SOP.RabbitMQ;
 namespace SOP.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("train")]
     public class TrainController : ControllerBase
     {
         private readonly IMongoCollection<WagonResource> _wagons;
@@ -32,7 +31,7 @@ namespace SOP.Controllers
         {
             if (!ObjectId.TryParse(id, out var objectId))
             {
-                return BadRequest("�������� ������ Id.");
+                return BadRequest("Неправильный формат ID.");
             }
 
             var wagon = await _wagons.Find(w => w.Id == objectId).FirstOrDefaultAsync();
@@ -56,7 +55,9 @@ namespace SOP.Controllers
                     Load = Url.Link("LoadWagon", new { id = wagon.Id.ToString() })
                 }
             };
-
+            
+            _rabbitMqService.PublishMessage($"Получен вагон с ID: {id}");
+            
             return Ok(wagonResource);
         }
 
@@ -109,6 +110,8 @@ namespace SOP.Controllers
             }
 
             await _wagons.ReplaceOneAsync(w => w.Id == objectId, wagon);
+            
+            _rabbitMqService.PublishMessage($"Вагон с ID: {id} загружен на {loadAmount} единиц.");
 
             return NoContent();
         }
@@ -133,6 +136,8 @@ namespace SOP.Controllers
             wagon.IsLoaded = updateWagon.IsLoaded;
 
             await _wagons.ReplaceOneAsync(w => w.Id == objectId, wagon);
+            
+            _rabbitMqService.PublishMessage($"Вагон с ID: {id} обновлен.");
 
             return NoContent();
         }
@@ -152,6 +157,8 @@ namespace SOP.Controllers
             }
 
             await _wagons.DeleteOneAsync(w => w.Id == objectId);
+            
+            _rabbitMqService.PublishMessage($"Вагон с ID: {id} удалён.");
 
             return NoContent();
         }
@@ -162,7 +169,9 @@ namespace SOP.Controllers
             newWagon.Id = ObjectId.GenerateNewId();
 
             await _wagons.InsertOneAsync(newWagon);
-            _rabbitMqService.PublishMessage($"Создан новый вагон: {newWagon.Cargo}");
+            
+            _rabbitMqService.PublishMessage($"Создан новый вагон с ID: {newWagon.Id} и Cargo: {newWagon.Cargo}");
+
             return CreatedAtAction(nameof(GetWagon), new { id = newWagon.Id.ToString() }, newWagon);
         }
     }

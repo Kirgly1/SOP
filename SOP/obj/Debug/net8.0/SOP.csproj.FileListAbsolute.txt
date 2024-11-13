@@ -220,9 +220,9 @@ C:/Users/Kirgly/Source/Repos/SOP/SOP/bin/Debug/net8.0/System.Reactive.xml
 /home/kirgly/RiderProjects/SOP/SOP/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.SOP.props
 /home/kirgly/RiderProjects/SOP/SOP/obj/Debug/net8.0/staticwebassets.pack.json
 /home/kirgly/RiderProjects/SOP/SOP/obj/Debug/net8.0/scopedcss/bundle/SOP.styles.css
-/home/kirgly/RiderProjects/SOP/SOP/obj/Debug/net8.0/SOP.csproj.Up2Date
 /home/kirgly/RiderProjects/SOP/SOP/obj/Debug/net8.0/SOP.dll
 /home/kirgly/RiderProjects/SOP/SOP/obj/Debug/net8.0/refint/SOP.dll
 /home/kirgly/RiderProjects/SOP/SOP/obj/Debug/net8.0/SOP.pdb
 /home/kirgly/RiderProjects/SOP/SOP/obj/Debug/net8.0/SOP.genruntimeconfig.cache
 /home/kirgly/RiderProjects/SOP/SOP/obj/Debug/net8.0/ref/SOP.dll
+/home/kirgly/RiderProjects/SOP/SOP/obj/Debug/net8.0/SOP.csproj.CopyComplete
